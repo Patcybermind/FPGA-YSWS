@@ -2,4 +2,8 @@
 
 ## Running:
 
-just use the vscode live server addon
+run ```npm install```
+
+and use the vscode live server addon
+
+or run ```npm run dev```
