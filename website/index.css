@@ -7,17 +7,14 @@ body {
     width: 100%;
     
 }
-.medievalsharp-regular {
-    font-family: "MedievalSharp", cursive;
-    font-weight: 400;
-    font-style: normal;
-}  
+
 header {
     background-color: #ffffff;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
     height: 7%;
     width: 100%;
     padding-top: 0.1%;
+    padding-bottom: 1%;
     
     
 }
@@ -37,7 +34,7 @@ header {
 }
 .header-link {
     
-    margin-right: 2%;
+    margin-right: 0%;
     padding: 1% 2%;
     color: black;
     font-weight: bold;
@@ -55,4 +52,5 @@ header {
     border-radius: 5px;
     color: #AAA;
     transition: color 0.2s ease;
+    text-decoration: none;
 }
