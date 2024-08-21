@@ -2,6 +2,9 @@
 title: template
 publish: false
 authors: Patcybermind
+description: template description
+number: 0
+tags: template, template test
 ---
 # test #
 ## test ##

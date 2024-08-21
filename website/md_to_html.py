@@ -1,13 +1,3 @@
-# this will be to transform markdown files to html files with our own styling and our own rules, the reason for this is that we might one day need more customisation options and it cant be that hard to make our own md to html
-# when running this script you must be in the website directory and if you are on vscode you working terminal directory must be FPGA-YSWS/website
-import os
-import re
-
-current_directory = os.getcwd()
-if not current_directory.endswith("website"):
-    print("Please make sure you are in the 'website' directory before running this script.")
-    print("Current directory:", current_directory)
-    exit()
 def convert_md_tags(line):
     
     # Convert headers (e.g., ## Header -> <h2>Header</h2> up to h6)
@@ -27,11 +17,10 @@ def convert_md_tags(line):
 
     return line
     
-
 def convert_to_html(file):
     with open("html_boilerplate.html", "r") as f:
         boilerplate = f.read()
-    with open(f"md_files/{file}", "r") as f:
+    with open(f"pub/{file}", "r") as f:
         content = f.read()
         content_list = content.splitlines()
         new_content = boilerplate + "\n"
@@ -39,15 +28,13 @@ def convert_to_html(file):
             new_content += convert_md_tags(line) + "\n"
 
 
-    with open(f"html_files/{file.replace('.md', '.html')}", "w") as f:
+    with open(f"pub/{file.replace('.md', '.html')}", "w") as f:
         f.write(new_content)
 
 
 def generate_html():
 
-    list_of_files = [file for file in os.listdir("md_files") if file.endswith(".md") and file != "README.md"]
+    list_of_files = [file for file in os.listdir("pub") if file.endswith(".md") and file != "README.md"]
     print("\n", list_of_files) 
     for file in list_of_files:
         convert_to_html(file)
-
-generate_html()
