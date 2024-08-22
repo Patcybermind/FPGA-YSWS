@@ -44,5 +44,40 @@ def build_cms():
             if publish == True:
                 data.append(file_settings)
     print("data:", data)
+    return data
 
-build_cms()
+def write_cms_html(data):
+    with open("cms_boiler_plate.html", "r") as f:
+        boilerplate = f.read()
+    new_content = boilerplate + "\n"
+    # rearange data to be in order of number
+    # TODO: MAKE DATA INTO A DICTONARY SO I DONT HAVE TO LOOK THROUGH EVERYTHING TO FIND THE NUMBER TITLE ETC
+
+    with open("cms.html", "w") as f:
+        new_content += '<section class="page-list">\n<div class="page-container">\n'
+        for post in data:
+            pass
+            
+
+
+metadata = build_cms()
+
+
+"""
+<section class="page-list">
+    <div class="page-container">
+        <a class="page-item">
+        <h2>Page 1</h2>
+        <p>Description</p>
+        </a>
+
+        <a class="page-item">
+        <h2>Page 2</h2>
+        <p>Description</p>
+        </a>
+
+
+        <!-- Add more pages as needed -->
+    </div>
+</section>
+"""
