@@ -1,6 +1,6 @@
 ---
 title: template
-publish: false
+publish: true
 authors: Patcybermind
 description: template description
 number: 0
